@@ -9,8 +9,7 @@ export default function Home() {
       {/* HERO BANNER LLAMATIVO */}
       {/* HERO BANNER */}
 {/* HERO BANNER */}
-<section className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden flex items-center">
-
+<section className="relative w-full h-[55vh] min-h-[330px] max-h-[450px] md:h-[80vh] overflow-hidden flex items-center px-2 md:px-0">
   {/* Imagen de fondo */}
   <Image
     src="/bebe3.jpg"
@@ -19,48 +18,36 @@ export default function Home() {
     className="object-cover brightness-[0.50]"
     priority
   />
-
-  {/* Gradiente suave a la derecha para leer el texto */}
-  <div className="absolute inset-0 bg-gradient-to-l from-[#5a3e29]/55 via-transparent to-transparent" />
-
+  {/* Gradiente suave a la derecha para leer el texto (solo en desktop) */}
+  <div className="hidden md:block absolute inset-0 bg-gradient-to-l from-[#5a3e29]/55 via-transparent to-transparent" />
+  {/* Gradiente abajo en mobile para el texto */}
+  <div className="md:hidden absolute inset-0 bg-gradient-to-t from-[#5a3e29]/65 via-transparent to-transparent" />
   {/* CONTENIDO */}
-  <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex justify-end items-center">
-
-    {/* TEXTOS ALINEADOS A LA IZQUIERDA, UBICADOS A LA DERECHA */}
-    <div className="max-w-md text-left">
-
-      {/* Etiqueta */}
-      <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#bbc191] text-[#5a3e29] text-[11px] font-medium shadow-sm">
+  <div className="relative z-10 w-full max-w-7xl mx-auto px-3 md:px-6 flex items-end md:items-center justify-center md:justify-end h-full">
+    <div className="max-w-full md:max-w-md text-left mb-6 md:mb-0">
+      <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#bbc191] text-[#5a3e29] text-[11px] font-medium shadow-sm mb-2">
         ✨ Nueva colección · Neutros
       </span>
-
-      {/* TITULO MÁS PEQUEÑO */}
-      <h1 className="font-title text-3xl md:text-4xl font-semibold text-[#f1ece2] mt-3 leading-snug drop-shadow">
+      <h1 className="font-title text-2xl xs:text-3xl md:text-4xl font-semibold text-[#f1ece2] mt-1 md:mt-3 leading-snug drop-shadow">
         Ropita suave y cálida
         <br />
         <span className="text-[#bbc191]">
           para sus primeros meses
         </span>
       </h1>
-
-      {/* DESCRIPCIÓN MÁS CHICA */}
-      <p className="text-sm md:text-base text-[#f1ece2] mt-3 opacity-95 max-w-sm">
-        Prendas en tonos neutros, cómodas y combinables.
-        Diseñadas para abrazos, siestas largas y fotos que vas a querer guardar siempre.
+      <p className="text-xs xs:text-sm md:text-base text-[#f1ece2] mt-3 opacity-95 max-w-xs md:max-w-sm">
+        Prendas en tonos neutros, cómodas y combinables. Pensadas para abrazos, siestas largas y fotos inolvidables.
       </p>
-
-      {/* BOTONES */}
-      <div className="mt-5 flex gap-3">
+      <div className="mt-4 flex flex-col md:flex-row gap-2 md:gap-3 w-full md:w-auto">
         <Link
           href="/catalogo"
-          className="px-5 py-2 rounded-full bg-[#8a5d3d] text-[#f1ece2] text-sm font-medium shadow-md hover:bg-[#5a3e29] transition"
+          className="w-full md:w-auto text-center px-5 py-2 rounded-full bg-[#8a5d3d] text-[#f1ece2] text-sm font-medium shadow-md hover:bg-[#5a3e29] transition"
         >
           Ver catálogo
         </Link>
-
         <Link
           href="/contacto"
-          className="px-5 py-2 rounded-full border border-[#f1ece2]/60 text-[#f1ece2] text-sm font-medium hover:bg-[#f1ece2]/10 transition"
+          className="w-full md:w-auto text-center px-5 py-2 rounded-full border border-[#f1ece2]/60 text-[#f1ece2] text-sm font-medium hover:bg-[#f1ece2]/10 transition"
         >
           Hacer un pedido
         </Link>
@@ -73,15 +60,14 @@ export default function Home() {
 
 
       {/* PRODUCTOS DESTACADOS */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-2xl font-semibold text-[#5a3e29] mb-2">
+      <section className="max-w-6xl mx-auto px-2 xs:px-3 md:px-6 py-10 md:py-16">
+        <h2 className="text-xl xs:text-2xl md:text-2xl font-semibold text-[#5a3e29] mb-2">
           Productos destacados
         </h2>
-        <p className="text-sm text-[#8a5d3d] mb-6">
+        <p className="text-xs xs:text-sm md:text-sm text-[#8a5d3d] mb-4 md:mb-6">
           Algunas prendas ideales para regalar o armar la primera valijita del bebé.
         </p>
-
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-4 xs:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {/* Producto 1 */}
           <article className="bg-white border border-[#bbc191] rounded-xl shadow-sm hover:-translate-y-1 hover:shadow-md transition p-4">
             <Image
